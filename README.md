@@ -1,7 +1,5 @@
 #### 关于项目  
-这个项目是一个spring boot的插件，这个插件主要是实现了用户和登录接口拦截，并对返回类型和异常类型进行包装。
-该项目不进行登录接口实现，只是提供了user表的设计，具体可根据自己业务调整。
-
+这个项目是一个spring boot的插件，这个插件主要是实现了用户和登录接口拦截，并对返回类型和异常类型进行包装。该项目不进行登录接口实现，只是提供了user表的设计，具体可根据自己业务调整。
 
 #### 项目主要实现功能
 1. @RestfulPack 
@@ -23,9 +21,9 @@
 #### 使用方法
 1. 将项目打包
 2. 运行 
-    ```bash
+  ```bash
    mvn install:install-file -Dfile=D:\zeongit-share-0.0.1.jar -DgroupId=com.zeongit -DartifactId=share -Dversion=0.0.1 -Dpackaging=jar 
-   ```
+  ```
    把项目部安装到maven仓库
    
 3. 使用项目添加依赖
@@ -38,7 +36,8 @@
   ```
 
 #### 使用项目  
-[zeongit-beauty](https://github.com/JunJieFu/beauty)  
+[zeongit-account](https://github.com/JunJieFu/zeongit-account)  
+[zeongit-beauty](https://github.com/JunJieFu/zeongit-beauty)  
   
 #### 开源协议  
 [MIT](https://opensource.org/licenses/MIT)
