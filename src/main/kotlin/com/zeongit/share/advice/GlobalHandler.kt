@@ -32,7 +32,7 @@ class GlobalHandler : ResponseBodyAdvice<Any?> {
     }
 
     override fun beforeBodyWrite(returnValue: Any?, methodParameter: MethodParameter, mediaType: MediaType, clazz: Class<out HttpMessageConverter<*>>, p4: ServerHttpRequest, p5: ServerHttpResponse): Result<*> {
-        return returnValue as? Result<*> ?: Result(returnValue)
+        return returnValue as? Result<*> ?: Result(data = returnValue)
     }
 
     //运行时异常
@@ -55,7 +55,7 @@ class GlobalHandler : ResponseBodyAdvice<Any?> {
     @ResponseBody
     @ExceptionHandler(NullPointerException::class)
     fun nullPointerExceptionHandler(e: NullPointerException): Result<Any?> {
-        return Result(500, e.message, e.cause)
+        return Result(ExceptionCodeConstant.PROGRAM, e.message, e.cause)
     }
 
     //sql查询异常
