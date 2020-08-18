@@ -3,6 +3,7 @@ package com.zeongit.share.interceptor
 import com.zeongit.share.annotations.Auth
 import com.zeongit.share.component.UserComponent
 import com.zeongit.share.constant.BaseConstant
+import com.zeongit.share.constant.ExceptionCodeConstant
 import com.zeongit.share.exception.NotFoundException
 import com.zeongit.share.exception.PermissionException
 import com.zeongit.share.exception.SignInException
@@ -62,7 +63,7 @@ class AuthInterceptor(private val userComponent: UserComponent
                     request.setAttribute("user_info_id", userComponent.getByUserId(id).id!!)
                 } catch (e: NotFoundException) {
                     if (auth != null && !auth.middleware) {
-                        throw PermissionException("请完善你的信息", 503)
+                        throw PermissionException("请完善你的信息", ExceptionCodeConstant.INIT)
                     }
                 }
             } catch (e: Exception) {

@@ -1,18 +1,6 @@
 package com.zeongit.share.exception
 
-open class BaseException : RuntimeException  {
-    var status: Int = 500
+import com.zeongit.share.constant.ExceptionCodeConstant
 
-    var data: Any? = null
-
-    constructor(message: String?, status: Int, data: Any?) : super(message) {
-        this.status = status
-        this.data = data
-    }
-
-    constructor(message: String?, status: Int) : super(message) {
-        this.status = status
-    }
-
-    constructor(message: String?) : super(message) {}
-}
+open class BaseException(message: String, var status: Int = ExceptionCodeConstant.PROGRAM, var data: Any? = null)
+    : RuntimeException(message)

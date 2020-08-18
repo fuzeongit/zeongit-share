@@ -1,11 +1,6 @@
 package com.zeongit.share.exception
 
-class PermissionException : BaseException {
-    constructor(message: String, status: Int, data: Any?) : super(message, status, data) {}
+import com.zeongit.share.constant.ExceptionCodeConstant
 
-    constructor(message: String, status: Int) : super(message, status) {}
-
-    constructor(message: String) : super(message) {
-        super.status = 403
-    }
-}
+class PermissionException(message: String, status: Int = ExceptionCodeConstant.PERMISSION, data: Any? = null)
+    : BaseException(message, status, data)

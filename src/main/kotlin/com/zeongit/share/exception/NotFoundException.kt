@@ -1,11 +1,6 @@
 package com.zeongit.share.exception
 
-class NotFoundException : BaseException {
-    constructor(message: String, status: Int, data: Any?) : super(message, status, data) {}
+import com.zeongit.share.constant.ExceptionCodeConstant
 
-    constructor(message: String, status: Int) : super(message, status) {}
-
-    constructor(message: String) : super(message) {
-        super.status = 404
-    }
-}
+class NotFoundException(message: String, status: Int = ExceptionCodeConstant.NOT_FOUND, data: Any? = null) :
+        BaseException(message, status, data)
