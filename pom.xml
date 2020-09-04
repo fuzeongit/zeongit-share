@@ -83,6 +83,5 @@
                 </dependencies>
             </plugin>
         </plugins>
-        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
     </build>
 </project>

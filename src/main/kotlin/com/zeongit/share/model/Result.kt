@@ -1,7 +1,5 @@
 package com.zeongit.share.model
 
-import com.zeongit.share.constant.ExceptionCodeConstant
-
 /**
  * 返回信息
  * @author fjj
